@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xmlns='http://www.ehcache.org/v3' xmlns:jsr107='http://www.ehcache.org/v3/jsr107'
+	xsi:schemaLocation="
+        http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.2.xsd
+        http://www.ehcache.org/v3/jsr107 http://www.ehcache.org/schema/ehcache-107-ext-3.2.xsd">
+	<service>
+		<!-- jsr107又称jcache，ehcache遵守jcache规范的缓存提供商 -->
+		<!-- enable-management 启动缓存MBean管理 -->
+		<!-- enable-statistics 启动缓存统计 -->
+		<!-- default-template 意味着由CacheManager创建Cache，都会使用其配置的默认缓存配置模版来配置Cache -->
+		<!-- 更多信息见：
+				http://www.ehcache.org/documentation/3.2/107.html#supplement-jsr-107-configurations
+				http://www.ehcache.org/documentation/3.2/xml.html
+		-->
+		<jsr107:defaults enable-management="true" enable-statistics="true" default-template="default-cache-template">
+			<!-- 可以通过template属性来覆盖默认的缓存模版 -->
+			<jsr107:cache name="test" template="default-cache-template"/>
+		</jsr107:defaults>
+	</service>
+	
+	<!-- 默认缓存模版 -->
+	<cache-template name="default-cache-template">
+		<resources>
+			<heap unit="entries">10000</heap>
+			<offheap unit="MB">10</offheap>
+		</resources>
+	</cache-template>
+</config>

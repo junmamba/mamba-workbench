@@ -1,0 +1,22 @@
+# **** i18n国际码 **** Start **** #
+i18n:
+  local: ZH_CN
+# **** i18n国际码 **** End **** #
+
+# **** WEB服务器配置, 由EmbeddedServletContainerAutoConfiguration和ServerPropertiesAutoConfiguration类提供自动配置功能 **** Start **** #
+server:
+  port: 8081
+# **** WEB服务器配置, 由EmbeddedServletContainerAutoConfiguration和ServerPropertiesAutoConfiguration类提供自动配置功能 **** End ****#
+
+# ***************************************************** SpringBoot自动配置 Start ***************************************************** #
+spring:
+# ****  缓存配置 **** Start **** #
+  cache:
+    type: jcache
+    jcache:
+      config: classpath:ehcache.xml
+# ****  缓存配置 **** End **** #
+  resources:
+    staticLocations: [html, webapp]
+# ***************************************************** SpringBoot自动配置 End ******************************************************* #
+    
