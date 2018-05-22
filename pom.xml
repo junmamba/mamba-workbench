@@ -18,6 +18,7 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<pagehelper.version>1.2.5</pagehelper.version>
 		<fastjson.version>1.2.46</fastjson.version>
+		<shiro.spring.boot.web>1.4.0</shiro.spring.boot.web>
 	</properties>
 
 	<dependencyManagement>
@@ -77,12 +78,6 @@
 			<artifactId>cache-api</artifactId>
 		</dependency>
 
-		<!-- Spring-Boot thymeleaf -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
-
 		<!-- mamba-framework -->
 		<dependency>
 			<groupId>com.mamba</groupId>
@@ -97,6 +92,13 @@
 			<version>${fastjson.version}</version>
 		</dependency>
 		<!-- 引入阿里巴巴 fastjson包 End -->
+		
+		<!-- 引入shiro(web)框架 -->
+		<dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring-boot-web-starter</artifactId>
+            <version>${shiro.spring.boot.web}</version>
+        </dependency>
 	</dependencies>
 
 	<build>
