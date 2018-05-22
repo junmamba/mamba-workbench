@@ -17,6 +17,6 @@ spring:
       config: classpath:ehcache.xml
 # ****  缓存配置 **** End **** #
   resources:
-    staticLocations: [html, webapp]
+    static-locations: classpath:/webapp/
 # ***************************************************** SpringBoot自动配置 End ******************************************************* #
     
